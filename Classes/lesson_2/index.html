@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test calc</title>
+    <style>
+        .container {}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input class="numberValue" type="button" value="1" onclick="getNum(1)">
+        <input class="numberValue" type="button" value="2" onclick="getNum(2)">
+        <input class="numberValue" type="button" value="3" onclick="getNum(3)">
+        <input class="numberValue" type="button" value="4" onclick="getNum(4)">
+        <input class="numberValue" type="button" value="5" onclick="getNum(5)">
+        <input class="numberValue" type="button" value="6" onclick="getNum(6)">
+        <input class="numberValue" type="button" value="7" onclick="getNum(7)">
+        <input class="numberValue" type="button" value="8" onclick="getNum(8)">
+        <input class="numberValue" type="button" value="9" onclick="getNum(9)">
+        <input class="numberValue" type="button" value="0" onclick="getNum(0)">
+        <input class="numberValue" type="button" value="+" onclick="operation('+')">
+        <input class="numberValue" type="button" value="_" onclick="operation('-')">
+        <input class="numberValue" type="button" value="*" onclick="operation('*')">
+        <input class="numberValue" type="button" value="/" onclick="operation('/')">
+    </div>
+    <script>
+        let x = "";
+        let y;
+        let operation;
+
+        function getNum(num) {
+            if (x == "") {
+                x = parseInt(num);
+            } else {
+                y = num;
+                console.log(y);
+            }
+            console.log('this is', x);
+            console.log(y);
+        }
+
+        switch (operation) {
+
+        }
+
+
+        /*let numberValueArr = document.querySelectorAll(".numberValue");
+
+
+                for (i = 0; i < numberValueArr.length; i++) {
+                    let numberValue = numberValueArr[i];
+                    numberValue.addEventListener('click', () => {
+                        let x = ("value", numberValue.value);
+                        console.log(x);
+                    })
+                }*/
+    </script>
+</body>
+
+</html>
