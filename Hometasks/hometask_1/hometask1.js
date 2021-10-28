@@ -2,13 +2,52 @@
  let secondName = prompt("Введите вашу фамилию");
  let thirdName = prompt("Введите ваше отчество");
  let age = parseInt(prompt("Укажите ваш возраст"));
- let gender = confirm("Укажите ваш пол");
+ const genderQuestion = confirm("Вы мужчина?");
+
+ /* С помощью тернарного оператора
+ let gender = (genderQuestion == true) ? "Мужчина" : "Женщина";;
+ let pension = (gender == "Мужчина" && age < 65 || gender == "Женщина" && age < 55) ? "Нет" : "Да";;
+ */
+
+ //Обычны способ с использованием if
+ let gender;
+ let pension;
+
+ while (firstName === "") {
+     firstName = prompt("Введите ваше имя");
+ }
+ while (secondName === "") {
+     secondName = prompt("Введите вашу фамилию");
+ }
+ while (thirdName === "") {
+     thirdName = prompt("Введите ваше отчество");
+ }
+
+ while (isNaN(age) || age === "" || age > 120) {
+     age = parseInt(prompt("Укажите ваш возраст корректно"));
+ }
+
  let ageTranslatedInDays = age * 365;
  let ageAfterFiveYears = age + 5;
+
+ if (genderQuestion == true) {
+     gender = "Мужчина";
+ } else {
+     gender = "Женщина";
+ }
+
+ if (gender == "Мужчина" && age < 65) {
+     pension = "Нет";
+ } else if (gender == "Женщина" && age < 55) {
+     pension = "Нет";
+ } else {
+     pension = "Да";
+ }
 
  alert("Ваше Ф.И.О:" + " " + firstName + " " + secondName + " " + thirdName + "\n" +
      "Ваш возраст в годах:" + " " + age + "\n" +
      "Ваш возраст в днях:" + " " + ageTranslatedInDays + "\n" +
-     "Через 5 лет вам будет:" + " " + AfterFiveYears + "\n" +
-     "Ваш пол:"
+     "Через 5 лет вам будет:" + " " + ageAfterFiveYears + "\n" +
+     "Ваш пол:" + " " + gender + "\n" +
+     "Вы на пенсии:" + " " + pension + "\n"
  );
