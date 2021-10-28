@@ -13,13 +13,13 @@
  let gender;
  let pension;
 
- while (firstName === "") {
+ while (firstName === "" || isNaN(firstName) !== true) {
      firstName = prompt("Введите ваше имя");
  }
- while (secondName === "") {
+ while (secondName === "" || isNaN(secondName) !== true) {
      secondName = prompt("Введите вашу фамилию");
  }
- while (thirdName === "") {
+ while (thirdName === "" || isNaN(thirdName) !== true) {
      thirdName = prompt("Введите ваше отчество");
  }
 
