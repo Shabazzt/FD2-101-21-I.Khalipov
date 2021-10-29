@@ -6,10 +6,10 @@
 
  /* С помощью тернарного оператора
  let gender = (genderQuestion == true) ? "Мужчина" : "Женщина";;
- let pension = (gender == "Мужчина" && age < 65 || gender == "Женщина" && age < 55) ? "Нет" : "Да";;
+ aalet pension = (gender == "Мужчина" && age < 65 || gender == "Женщина" && age < 55) ? "Нет" : "Да";;
  */
 
- //Обычны способ с использованием if
+ //Обычны способ с использованием ifsdfsdfsdfdfsd
  let gender;
  let pension;
 
