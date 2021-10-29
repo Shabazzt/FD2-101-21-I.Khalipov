@@ -6,24 +6,24 @@
 
  /* С помощью тернарного оператора
  let gender = (genderQuestion == true) ? "Мужчина" : "Женщина";;
- aalet pension = (gender == "Мужчина" && age < 65 || gender == "Женщина" && age < 55) ? "Нет" : "Да";;
+ let pension = (gender == "Мужчина" && age < 65 || gender == "Женщина" && age < 55) ? "Нет" : "Да";;
  */
 
- //Обычны способ с использованием ifsdfsdfsdfdfsd
+ //Обычны способ с использованием 
  let gender;
  let pension;
 
- while (firstName === "" || isNaN(firstName) !== true) {
+ while (firstName === "" || isNaN(firstName) !== true || firstName === " ") {
      firstName = prompt("Введите ваше имя");
  }
- while (secondName === "" || isNaN(secondName) !== true) {
+ while (secondName === "" || isNaN(secondName) !== true || secondName === " ") {
      secondName = prompt("Введите вашу фамилию");
  }
- while (thirdName === "" || isNaN(thirdName) !== true) {
+ while (thirdName === "" || isNaN(thirdName) !== true || thirdName === " ") {
      thirdName = prompt("Введите ваше отчество");
  }
 
- while (isNaN(age) || age === "" || age > 120) {
+ while (isNaN(age) || age === "" || age > 120 || age === " ") {
      age = parseInt(prompt("Укажите ваш возраст корректно"));
  }
 
