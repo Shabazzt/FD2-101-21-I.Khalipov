@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Vowels</title>
+</head>
+
+<body>
+    <script>
+        const phrase = " рок-музыки лежат в блюзе из которого и вышли первые рок-жанры рок-н-ролл и рокабилли первые поджанры рок-музыки возникали в тесной связи с народной и"
+        console.log("Фраза для проверки:", phrase);
+
+        function countVowel(str) {
+            let newStr = str.toLowerCase().split(' ').join('');
+            const vowels = {
+                "а": "а",
+                "я": "я",
+                "у": "у",
+                "ю": "ю",
+                "о": "о",
+                "е": "е",
+                "ё": "ё",
+                "э": "э",
+                "и": "и",
+                "ы": "ы"
+            }
+            let lettersCount = {};
+            let totalLettersCounter = 0;
+            let totalVowelsCounter = 0;
+            for (let i = 0; i < newStr.length; i++) {
+                let strLetter = newStr[i];
+                if (strLetter in vowels) {
+                    totalVowelsCounter++;
+                }
+                if (strLetter in vowels && (!(strLetter in lettersCount))) {
+                    lettersCount[strLetter] = 0;
+                }
+                lettersCount[strLetter]++;
+                totalLettersCounter++;
+            }
+            //console.log(lettersCount);
+
+            for (letter in lettersCount) {
+                if (letter in vowels) {
+                    console.log('Буква ' + letter + ' количество ' + lettersCount[letter]);
+                }
+            }
+            console.log("totalLetters:", totalLettersCounter);
+            console.log("totalVowels:", totalVowelsCounter);
+        }
+        countVowel(phrase);
+    </script>
+</body>
+
+</html>
