@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Html tag</title>
+</head>
+
+<body>
+    <div id="dataForCreateBlock">
+        <p>Create Html tag</p>
+        <input type="text" name="tag" placeholder="Введите название tag`а">
+        <input type="text" name="text" placeholder="Содержимое тега">
+        <input type="text" name="property" placeholder="Введите свойство">
+        <input type="text" name="value" placeholder="Введите значение для свойства">
+        <input type="button" value="create" id="createBtn">
+        <hr>
+        <input type="button" value="createUl" id="createUl">
+        <input type="button" value="createLi" id="createLi">
+        <hr>
+    </div>
+    <div id="mainContainer"></div>
+
+    <script>
+        const container = document.getElementById("mainContainer");
+        const createBtn = document.getElementById("createBtn");
+        const createUlBtn = document.getElementById("createUl");
+        const createLiBtn = document.getElementById("createLi");
+        const dataForCreationBlock = document.getElementById("dataForCreateBlock");
+        const inputs = dataForCreationBlock.querySelectorAll("input[type=text]");
+        let ul = "";
+        let dataFornewUl = "";
+
+        createBtn.addEventListener("click", createTag);
+        createUlBtn.addEventListener("click", createTagUl);
+        createLiBtn.addEventListener("click", createTagLi);
+
+        function createTag() {
+
+            const propertiesForTag = {};
+
+            for (let input of inputs) {
+                propertiesForTag[input.name] = input.value;
+            }
+
+            const createElement = document.createElement(propertiesForTag.tag);
+            container.appendChild(createElement);
+            createElement.style[propertiesForTag.property] = propertiesForTag.value;
+            createElement.innerText = propertiesForTag.text;
+            console.log(propertiesForTag);
+        }
+
+        function createTagUl() {
+
+            dataFornewUl = document.createElement("div");
+            dataFornewUl.setAttribute("id", "dataForNewUl");
+
+            ul = document.createElement("ul");
+            ul.setAttribute("class", "newUl");
+
+            const inputText = document.createElement("input");
+            inputText.setAttribute("name", "text");
+            inputText.setAttribute("type", "text");
+            inputText.placeholder = "Введите текст";
+
+            const inputProperty = document.createElement("input");
+            inputProperty.setAttribute("name", "property");
+            inputProperty.setAttribute("type", "text");
+            inputProperty.placeholder = "Введите свойство";
+
+            const inputValue = document.createElement("input");
+            inputValue.setAttribute("name", "value");
+            inputValue.setAttribute("type", "text");
+            inputValue.placeholder = "Введите значение";
+
+            dataForCreationBlock.appendChild(dataFornewUl);
+            container.appendChild(ul);
+            dataFornewUl.appendChild(inputText);
+            dataFornewUl.appendChild(inputProperty);
+            dataFornewUl.appendChild(inputValue);
+        }
+
+        function createTagLi() {
+            const inputs = dataFornewUl.querySelectorAll("input[type=text]");
+            const propertiesForLi = {};
+            for (let input of inputs) {
+                propertiesForLi[input.name] = input.value;
+            }
+            const createElement = document.createElement("li");
+            ul.appendChild(createElement);
+            createElement.style[propertiesForLi.property] = propertiesForLi.value;
+            createElement.innerText = propertiesForLi.text;
+        }
+    </script>
+</body>
+
+
+</html>
