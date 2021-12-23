@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drink Hash Func</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="infoContainer">
+        <input type="text" class="infoInputs" id="drinkName" name="drinkName" placeholder="Название напитка">
+        <input type="text" class="infoInputs" id="drinkType" name="drinkType" placeholder="Тип напитка">
+        <input type="text" class="infoInputs" id="drinkHistory" name="drinkHistory" placeholder="История напитка">
+        <input type="text" class="infoInputs" id="drinkRecipe" name="drinkRecipe" placeholder="Рецепт приготовления">
+
+        <div class="actionButtonsContainer">
+            <input type="button" class="actionButtons" value="showDrinkList" id="showDrinkList">
+            <input type="button" class="actionButtons" value="showDrinkInfo" id="showDrinkInfo">
+            <input type="button" class="actionButtons" value="deleteDrink" id="deleteDrink">
+            <input type="button" class="actionButtons" value="addDrinkToStorage" id="addInfoAboutDrink">
+        </div>
+    </div>
+    <div id="showInfoContainer"></div>
+    <script src="drinksHashFunc.js"></script>
+    <script src="drinkStorage.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+#infoContainer {
+    position: relative;
+    width: 50vw;
+    min-width: 506px;
+    border: 2px solid black;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.infoInputs {
+    position: relative;
+    width: 70%;
+    margin: 20px 0 0 0;
+}
+
+.actionButtonsContainer {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 0 20px 0;
+}
+
+.actionButtons {
+    position: relative;
+    margin: 20px 0 0 0;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="area"></div>
+
+    <script>
+        //img
+        //field0-tree
+        //field1-brick
+        //field2-field
+        const field0 = "img/0545.png_1200.png";
+        const field1 = "img/bricks1.jpg";
+        const field2 = "img/field.jpg"
+
+        //size
+        const c = 1;
+        const width = 500 * c;
+        const height = 500 * c;
+        //object
+        const human = document.createElement("div");
+
+        human.style.width = 20 + "px";
+        human.style.height = 20 + "px";
+        human.style.background = "red";
+        human.style.position = "absolute";
+        human.style.zIndex = 1;
+        human.setAttribute = ("id", "human");
+
+        let x = 0;
+        let y = 0
+        document.body.addEventListener("keydown", (e) => {
+            if (e.keyCode === 39) {
+                x += 10;
+                human.style.left = x + "px";
+                console.log(e);
+            } else if (e.keyCode === 38) {
+                y -= 10;
+                human.style.top = y + "px";
+                console.log(e);
+            } else if (e.keyCode === 40) {
+                y += 10;
+                human.style.top = y + "px";
+                console.log(e);
+            } else if (e.keyCode === 37) {
+                x -= 10;
+                human.style.left = x + "px";
+                console.log(e);
+            }
+            //Доделать чтобы не выходил за границы окна
+        })
+
+
+        const area = document.getElementById("area");
+        area.style.width = width + "px";
+        area.style.height = height + "px";
+        area.style.display = "flex";
+        area.style.flexWrap = "wrap";
+        area.style.position = "relative";
+
+        area.appendChild(human);
+
+
+        const AreaArr = [
+            [0, 1, 2, 0, 2],
+            [2, 0, 1, 2, 1],
+            [0, 1, 1, 1, 0],
+            [2, 0, 2, 2, 1],
+            [2, 2, 2, 1, 2],
+            [0, 1, 1, 2, 0],
+            [0, 1, 2, 2, 2]
+        ];
+        AreaArr.forEach(row => {
+            row.forEach(cell => {
+                if (cell === 0) {
+                    const field = document.createElement("img");
+                    field.src = field0;
+                    field.style.width = width / row.length + "px";
+                    field.style.height = height / cell.length + "px";
+                    field.style.zIndex = 0;
+                    area.appendChild(field);
+                } else if (cell === 1) {
+                    const field = document.createElement("img");
+                    field.src = field1;
+                    field.style.width = width / row.length + "px";
+                    field.style.height = height / cell.length + "px";
+                    field.style.zIndex = 0;
+                    area.appendChild(field);
+                } else if (cell === 2) {
+                    const field = document.createElement("img");
+                    field.src = field2;
+                    field.style.width = width / row.length + "px";
+                    field.style.height = height / cell.length + "px";
+                    field.style.zIndex = 0;
+                    area.appendChild(field);
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
